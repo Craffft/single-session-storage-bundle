@@ -12,8 +12,6 @@
 
 namespace Craffft\SingleSessionStorageBundle\Storage\Exception;
 
-use Symfony\Component\Security\Core\Exception\RuntimeException;
-
-class SingleSessionNotFoundException extends RuntimeException
+class SingleSessionNotFoundException extends \RuntimeException
 {
 }

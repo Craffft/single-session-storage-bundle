@@ -1,0 +1,8 @@
+framework:
+    secret: secret
+    test: ~
+    form: true
+    validation: { enable_annotations: true }
+    csrf_protection: ~
+    session:
+        storage_id: session.storage.filesystem

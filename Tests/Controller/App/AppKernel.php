@@ -10,10 +10,10 @@ class AppKernel extends Kernel
      */
     public function registerBundles()
     {
-        $bundles = [
+        $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Craffft\SingleSessionStorageBundle\SingleSessionStorageBundle(),
-        ];
+        );
 
         return $bundles;
     }

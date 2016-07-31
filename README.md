@@ -1,9 +1,9 @@
+[![Build Status](https://travis-ci.org/Craffft/single-session-storage-bundle.svg?branch=master)](https://travis-ci.org/Craffft/single-session-storage-bundle)
+
 Single Session Storage Bundle
 =============================
 
 Single Session Storage for Symfony
-
-[![Build Status](https://travis-ci.org/Craffft/single-session-storage-bundle.svg?branch=master)](https://travis-ci.org/Craffft/single-session-storage-bundle)
 
 Installation
 ------------

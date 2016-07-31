@@ -2,7 +2,7 @@
 
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <php>
-        <server name="KERNEL_DIR" value="Tests/Controller/App"/>
+        <server name="KERNEL_DIR" value="./Tests/Controller/App"/>
     </php>
 
     <testsuites>

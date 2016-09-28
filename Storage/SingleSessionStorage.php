@@ -59,6 +59,16 @@ class SingleSessionStorage implements SingleSessionStorageInterface
     }
 
     /**
+     * Defines an other namespace
+     *
+     * @param $namespace
+     */
+    public function setNamespace($namespace)
+    {
+        $this->namespace = $namespace;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function get($name)

@@ -103,4 +103,24 @@ class SingleSessionStorageTest extends WebTestCase
 
         $this->assertTrue(file_exists($this->filepath));
     }
+
+    public function testObjectInstanceByClass()
+    {
+        $singleSessionStorage = new SingleSessionStorage($this->container);
+
+        $this->assertInstanceOf(
+            'Craffft\\SingleSessionStorageBundle\\Storage\\SingleSessionStorage',
+            $singleSessionStorage
+        );
+    }
+
+    public function testObjectInstanceByService()
+    {
+        $singleSessionStorage = $this->container->get('craffft.single_session_storage');
+
+        $this->assertInstanceOf(
+            'Craffft\\SingleSessionStorageBundle\\Storage\\SingleSessionStorage',
+            $singleSessionStorage
+        );
+    }
 }

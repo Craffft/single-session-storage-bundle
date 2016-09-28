@@ -12,14 +12,14 @@
 
 namespace Tests\Craffft\SingleSessionStorageBundle;
 
-use Craffft\SingleSessionStorageBundle\SingleSessionStorageBundle;
+use Craffft\SingleSessionStorageBundle\CraffftSingleSessionStorageBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SingleSessionStorageBundleTest extends \PHPUnit_Framework_TestCase
+class CraffftSingleSessionStorageBundleTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiation()
     {
         $bundle = new SingleSessionStorageBundle();
-        $this->assertInstanceOf('Craffft\SingleSessionStorageBundle\SingleSessionStorageBundle', $bundle);
+        $this->assertInstanceOf('Craffft\SingleSessionStorageBundle\CraffftSingleSessionStorageBundle', $bundle);
     }
 }

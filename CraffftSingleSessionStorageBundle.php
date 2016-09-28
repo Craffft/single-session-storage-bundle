@@ -14,6 +14,6 @@ namespace Craffft\SingleSessionStorageBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SingleSessionStorageBundle extends Bundle
+class CraffftSingleSessionStorageBundle extends Bundle
 {
 }

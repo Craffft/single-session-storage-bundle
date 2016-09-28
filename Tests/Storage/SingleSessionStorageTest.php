@@ -123,4 +123,25 @@ class SingleSessionStorageTest extends WebTestCase
             $singleSessionStorage
         );
     }
+
+    public function testSetNamespaceByService()
+    {
+        /** @var SingleSessionStorage $singleSessionStorage */
+        $singleSessionStorage = $this->container->get('craffft.single_session_storage');
+        $singleSessionStorage->setNamespace('testStorage');
+        $singleSessionStorage->set('test', true);
+        $singleSessionStorage->saveSession();
+
+        $this->assertFileExists($this->container->getParameter('kernel.cache_dir') . '/storage/testStorage.yml');
+
+        /** @var SingleSessionStorage $singleSessionStorage */
+        $singleSessionStorage2 = new SingleSessionStorage($this->container);
+
+        $this->assertFalse($singleSessionStorage2->has('test'));
+
+        $singleSessionStorage2->setNamespace('testStorage');
+
+        $this->assertTrue($singleSessionStorage2->has('test'));
+        $this->assertTrue($singleSessionStorage2->get('test'));
+    }
 }

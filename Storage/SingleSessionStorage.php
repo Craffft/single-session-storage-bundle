@@ -66,6 +66,7 @@ class SingleSessionStorage implements SingleSessionStorageInterface
     public function setNamespace($namespace)
     {
         $this->namespace = $namespace;
+        $this->loadSession();
     }
 
     /**
@@ -81,7 +82,7 @@ class SingleSessionStorage implements SingleSessionStorageInterface
             throw new SingleSessionNotFoundException('The session with name "' . $name . '" does not exist.');
         }
 
-        return (string)$this->session[$this->namespace][$name];
+        return $this->session[$this->namespace][$name];
     }
 
     /**
@@ -93,7 +94,7 @@ class SingleSessionStorage implements SingleSessionStorageInterface
             $this->startSession();
         }
 
-        $this->session[$this->namespace][$name] = (string)$value;
+        $this->session[$this->namespace][$name] = $value;
         $this->saveSession();
     }
 
@@ -119,7 +120,7 @@ class SingleSessionStorage implements SingleSessionStorageInterface
         }
 
         $value = isset($this->session[$this->namespace][$name])
-            ? (string)$this->session[$this->namespace][$name]
+            ? $this->session[$this->namespace][$name]
             : null;
 
         unset($this->session[$this->namespace][$name]);

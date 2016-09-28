@@ -47,3 +47,33 @@ class AppKernel extends Kernel
     // ...
 }
 ```
+
+Usage example
+-------------
+
+```php
+<?php
+// AppBundle/Controller/DemoController.php
+
+// ...
+class DemoController extends Controller
+{
+    public function myAction()
+    {
+        // Set data via service
+        $singleSessionStorage = $this->container->get('craffft.single_session_storage');
+        $singleSessionStorage->setNamespace('testStorage'); // optional
+        $singleSessionStorage->set('key', 'value');
+        $singleSessionStorage->saveSession();
+        
+        // Set data via class
+        $singleSessionStorage = new SingleSessionStorage($this->container, 'testStorage');
+        $singleSessionStorage->set('key', 'value');
+        $singleSessionStorage->saveSession();
+        
+        // ...
+    }
+
+    // ...
+}
+```

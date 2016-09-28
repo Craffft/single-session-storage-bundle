@@ -19,7 +19,7 @@ class CraffftSingleSessionStorageBundleTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstantiation()
     {
-        $bundle = new SingleSessionStorageBundle();
+        $bundle = new CraffftSingleSessionStorageBundle();
         $this->assertInstanceOf('Craffft\SingleSessionStorageBundle\CraffftSingleSessionStorageBundle', $bundle);
     }
 }

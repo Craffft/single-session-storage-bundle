@@ -1,6 +1,6 @@
 {
     "name": "craffft/single-session-storage-bundle",
-    "type": "symfony-bundle",
+    "type": "contao-bundle",
     "description": "SingleSessionStorageBundle for Symfony",
     "keywords": ["single", "session", "storage"],
     "license": "MIT",

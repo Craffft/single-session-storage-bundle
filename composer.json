@@ -16,7 +16,7 @@
         "source": "https://github.com/Craffft/single-session-storage-bundle"
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.0",
         "symfony/symfony": "~2.7|~3.0"
     },
     "require-dev": {

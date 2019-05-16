@@ -31,6 +31,8 @@
       "contao-manager-plugin": "Craffft\\SingleSessionStorageBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
-      "psr-4": { "Craffft\\SingleSessionStorageBundle\\": "" }
+        "psr-4": {
+            "Craffft\\SingleSessionStorageBundle\\": "src/"
+        }
     }
 }

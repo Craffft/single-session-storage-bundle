@@ -17,7 +17,7 @@ class Plugin
         return [
             BundleConfig::create(CraffftSingleSessionStorageBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
-                ->setReplace(['translation-fields']),
+                ->setReplace(['single-session-storage']),
         ];
     }
 }

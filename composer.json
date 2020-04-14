@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "symfony/symfony": "~4.0"
+        "symfony/symfony": "~4.4"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",

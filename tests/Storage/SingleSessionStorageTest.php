@@ -109,7 +109,7 @@ class SingleSessionStorageTest extends WebTestCase
 
     public function testObjectInstanceByService()
     {
-        $singleSessionStorage = static::$container->get('craffft.single_session_storage');
+        $singleSessionStorage = static::$container->get(SingleSessionStorage::class);
 
         $this->assertInstanceOf(
             'Craffft\\SingleSessionStorageBundle\\Storage\\SingleSessionStorage',
@@ -120,7 +120,7 @@ class SingleSessionStorageTest extends WebTestCase
     public function testSetNamespaceByService()
     {
         /** @var SingleSessionStorage $singleSessionStorage */
-        $singleSessionStorage = static::$container->get('craffft.single_session_storage');
+        $singleSessionStorage = static::$container->get(SingleSessionStorage::class);
         $singleSessionStorage->setNamespace('testStorage');
         $singleSessionStorage->set('test', true);
         $singleSessionStorage->saveSession();

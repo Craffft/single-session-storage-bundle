@@ -16,12 +16,12 @@
         "source": "https://github.com/Craffft/single-session-storage-bundle"
     },
     "require": {
-        "php": ">=7.0",
-        "symfony/symfony": "~2.7|~3.0|~4.0"
+        "php": ">=7.2",
+        "symfony/symfony": "~4.0"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "*"
     },
     "conflict": {
         "contao/core": "*",

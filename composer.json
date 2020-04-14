@@ -21,7 +21,7 @@
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "phpunit/phpunit": "*"
+        "symfony/phpunit-bridge": "^5.0"
     },
     "conflict": {
         "contao/core": "*",

@@ -13,9 +13,9 @@
 namespace Tests\Craffft\SingleSessionStorageBundle;
 
 use Craffft\SingleSessionStorageBundle\CraffftSingleSessionStorageBundle;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use PHPUnit\Framework\TestCase;
 
-class CraffftSingleSessionStorageBundleTest extends \PHPUnit_Framework_TestCase
+class CraffftSingleSessionStorageBundleTest extends TestCase
 {
     public function testInstantiation()
     {

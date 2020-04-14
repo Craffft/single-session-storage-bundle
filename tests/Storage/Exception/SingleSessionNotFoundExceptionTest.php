@@ -13,8 +13,9 @@
 namespace Tests\Craffft\SingleSessionStorageBundle\Storage\Exception;
 
 use Craffft\SingleSessionStorageBundle\Storage\Exception\SingleSessionNotFoundException;
+use PHPUnit\Framework\TestCase;
 
-class SingleSessionNotFoundExceptionTest extends \PHPUnit_Framework_TestCase
+class SingleSessionNotFoundExceptionTest extends TestCase
 {
     protected function createException()
     {

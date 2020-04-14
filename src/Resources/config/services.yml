@@ -3,5 +3,5 @@ parameters:
 
 services:
     craffft.single_session_storage:
-        class: %craffft.single_session_storage.class%
+        class: "%craffft.single_session_storage.class%"
         arguments: ["@service_container"]

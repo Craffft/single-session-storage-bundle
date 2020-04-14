@@ -15,15 +15,9 @@ namespace Tests\Craffft\SingleSessionStorageBundle\Storage;
 use Craffft\SingleSessionStorageBundle\Storage\Exception\SingleSessionNotFoundException;
 use Craffft\SingleSessionStorageBundle\Storage\SingleSessionStorage;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\DependencyInjection\Container;
 
 class SingleSessionStorageTest extends WebTestCase
 {
-    /**
-     * @var Container
-     */
-    private $container;
-
     /**
      * @var string
      */
@@ -34,14 +28,13 @@ class SingleSessionStorageTest extends WebTestCase
      */
     private $singleSessionStorage;
 
-    public function setUp()
+    public function setUp(): void
     {
         self::bootKernel();
 
-        $this->container = self::$kernel->getContainer();
-        $this->filepath = $this->container->getParameter('kernel.cache_dir') . '/storage/single_session_storage.yml';
+        $this->filepath = static::$container->getParameter('kernel.cache_dir') . '/storage/single_session_storage.yml';
 
-        $this->singleSessionStorage = new SingleSessionStorage($this->container);
+        $this->singleSessionStorage = new SingleSessionStorage(static::$container);
         $this->singleSessionStorage->cleanSession();
     }
 
@@ -106,7 +99,7 @@ class SingleSessionStorageTest extends WebTestCase
 
     public function testObjectInstanceByClass()
     {
-        $singleSessionStorage = new SingleSessionStorage($this->container);
+        $singleSessionStorage = new SingleSessionStorage(static::$container);
 
         $this->assertInstanceOf(
             'Craffft\\SingleSessionStorageBundle\\Storage\\SingleSessionStorage',
@@ -116,7 +109,7 @@ class SingleSessionStorageTest extends WebTestCase
 
     public function testObjectInstanceByService()
     {
-        $singleSessionStorage = $this->container->get('craffft.single_session_storage');
+        $singleSessionStorage = static::$container->get('craffft.single_session_storage');
 
         $this->assertInstanceOf(
             'Craffft\\SingleSessionStorageBundle\\Storage\\SingleSessionStorage',
@@ -127,15 +120,15 @@ class SingleSessionStorageTest extends WebTestCase
     public function testSetNamespaceByService()
     {
         /** @var SingleSessionStorage $singleSessionStorage */
-        $singleSessionStorage = $this->container->get('craffft.single_session_storage');
+        $singleSessionStorage = static::$container->get('craffft.single_session_storage');
         $singleSessionStorage->setNamespace('testStorage');
         $singleSessionStorage->set('test', true);
         $singleSessionStorage->saveSession();
 
-        $this->assertFileExists($this->container->getParameter('kernel.cache_dir') . '/storage/testStorage.yml');
+        $this->assertFileExists(static::$container->getParameter('kernel.cache_dir') . '/storage/testStorage.yml');
 
         /** @var SingleSessionStorage $singleSessionStorage */
-        $singleSessionStorage2 = new SingleSessionStorage($this->container);
+        $singleSessionStorage2 = new SingleSessionStorage(static::$container);
 
         $this->assertFalse($singleSessionStorage2->has('test'));
 

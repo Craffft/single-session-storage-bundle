@@ -54,7 +54,7 @@ class SingleSessionStorageTest extends WebTestCase
     public function testGet()
     {
         $this->singleSessionStorage->set('test', 'testValue');
-        $this->assertContains('testValue', $this->singleSessionStorage->get('test'));
+        $this->assertEquals('testValue', $this->singleSessionStorage->get('test'));
     }
 
     public function testHas()
@@ -71,7 +71,7 @@ class SingleSessionStorageTest extends WebTestCase
 
         $this->assertNull($this->singleSessionStorage->remove('notDefined'));
 
-        $this->assertContains('testValue', $this->singleSessionStorage->remove('test'));
+        $this->assertEquals('testValue', $this->singleSessionStorage->remove('test'));
         $this->assertNull($this->singleSessionStorage->remove('test'));
     }
 

@@ -1,3 +1,7 @@
+parameters:
+    craffft.single_session_storage.class: Craffft\SingleSessionStorageBundle\Storage\SingleSessionStorage
+
 services:
-    Craffft\SingleSessionStorageBundle\Storage\SingleSessionStorage:
+    craffft.single_session_storage:
+        class: "%craffft.single_session_storage.class%"
         arguments: ["@service_container"]
